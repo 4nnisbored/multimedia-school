@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        html {
+            overflow-x: hidden;
+        }
+
+        a:hover {
+            rotate: 180deg;
+        }
+
+        body {
+            background: lightgreen;
+            overflow-x: hidden;
+        }
+
+        iframe {
+            display: inline;
+            width: 100%;
+            max-width: 400px;
+            height: 350px;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .rotate{
+            rotate: 180deg;
+            transition: 3s;
+        }
+
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonio's Index</title>
+    <link rel="icon" href="./360 dog 64x64.png">
+</head>
+<body>
+    <h1 style="font-family: Arial, Helvetica, sans-serif; text-shadow: 4px 4px #BADA55; ">antonio :P</h1>
+    hi i am antonio and this is my cool web page with my cool web links!!
+
+    <br>
+    <br>
+    <br>
+   <button><a href="web1/index.html">web 1</a></button>
+   <button><a href="et1/index.html">emerging tech 1</a></button>
+   <button><a href="pc1/index.html">photography 1</a></button>
+   <button><a href="./web1/project1/">about me :)</a></button>
+   <button id="button">flip my website</button>
+    <br>
+    <img src="https://cdn.dribbble.com/users/58639/screenshots/3788063/936.jpg" alt="graphic design is my passion" width="400;" rotate="180deg;">
+
+    <h2>what am i listening to now?</h2>
+    <iframe id="lastfm" src="https://descent.live/guyistaken" title="currently listening to"></iframe>
+
+
+
+<script>
+
+const button = document.getElementById("button");
+const body = document.querySelector("body");
+const lastfm = document.getElementById("lastfm");
+const scrobble = new XMLHttpRequest();
+
+
+button.onclick = function() {
+    body.classList.toggle("rotate");
+}
+
+
+lastfm.onload = function() {
+    scrobble.open("POST", "https://descent.live/app/config/set/");
+    scrobble.setRequestHeader("settings", "https://descent.live/app/config/set/");
+    scrobble.postMessage(
+        "scrobbleMode" == "lastScrobbled", "https://descent.live/app/config/set/"
+        // "extendedOn" == "true"
+    );
+    scrobble.send()
+}
+
+
+</script>
+</body>
+</html>

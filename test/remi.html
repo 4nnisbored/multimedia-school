@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remi's experiment</title>
+    <style>
+        * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+        body {
+            background-color: pink;
+        }
+
+        #interests {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+
+        #interests img {
+            height: 400px;
+            width: auto;
+        }
+
+        #interestsbox {
+            overflow-x: auto;
+            overflow-y: hidden;
+            height: 400px;
+            scrollbar-width: 5px;
+        }
+
+    </style>
+</head>
+<body>
+<main id="interestsbox">
+    <article id=interests>
+            <img src="./9284018.jpg">
+            <img src="./9284018.jpg">
+            <img src="./9284018.jpg">
+            <img src="./9284018.jpg">
+            <img src="./9284018.jpg">
+        </article>
+    </main>
+</body>
+</html>

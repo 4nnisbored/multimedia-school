@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>very cool game</title>
+    <link rel="stylesheet" href="../css/project2.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../project3/img/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../project3/img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="16x16" href="../project3/img/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../project3/img/favicon_io/site.webmanifest">
+    <meta name="apple-mobile-web-app-capable"/>
+</head>
+<body>
+    <img src="../project3/img/glasses.svg" id="glasses">
+    <div id="panel">vvery cool game</div>
+
+    <h2>design</h2>
+    <img src="../images/glasses-design.PNG">
+    <button> <a href="../project3/">Play The Game!!</a></button>
+
+    <script>
+
+        const panel = document.getElementById("panel");
+
+        let mySound = new Audio("../js/sounds/VERYLOUDGUITAR.mp3")
+        
+        panel.onclick = function() {
+            this.classList.toggle("slide-up");
+            mySound.play()
+        }
+        
+
+        const bart = document.getElementById("");
+        let mySound2 = new Audio("../js/sounds/")
+
+        bart.onclick = function () {
+            mySound2.play()
+        }
+
+    </script>  
+</body>
+</html>

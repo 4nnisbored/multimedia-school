@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: pink;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #pentagon{
+            position: relative;
+            width: 54px;
+            box-sizing: content-box;
+            border-width: 50px 18px 0;
+            border-style: solid;
+            border-color: red transparent;
+            top: 42px;
+            left: 210px;
+        }
+        #pentagon:before {
+            content: "";
+            position: absolute;
+            height: 0;
+            width: 0;
+            top: -85;
+            left: -18;
+            border-width: 0 45px 35pc;
+            border-style: solid;
+            border-color: transparent transparent red;
+            transition: all 0.4s ease-in;
+        }
+    </style>
+    <script src="js/js-2.js" defer></script>
+</head>
+<body>
+    <h1>JS 2</h1>
+    <div id="pentagon"></div>
+</body>
+</html>

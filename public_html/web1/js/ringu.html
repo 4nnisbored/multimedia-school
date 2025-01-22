@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the ring simulator</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<img src="https://149349728.v2.pressablecdn.com/wp-content/uploads/2024/01/Screen-Shot-2024-01-10-at-10.05.44-PM.png" alt="">
+<h1 id="timer"></h1>
+    <script>
+        alert('one week')
+        console.log("if you don't pass on the curse to 5 other discord servers, you will die in a week. i'm so sorry i had to do this, i'm just a victim")
+
+        // Variables
+        // dynamic variable type "let" (data can be changed)
+
+        let myName = "tonio";
+        myName = "creepy dead girl that kills people with her mind";
+        console.log(myName)
+
+        function why (){
+            alert ("cause she can")
+        }
+        const startTime = Date.now();
+const timerLength = 10080 * 60; // # of seconds to start at = 12 mins 30 secs
+const timerDiv = document.getElementById("timer");
+
+const timerFn = () => {
+  const currentTime = Date.now();
+  let timeLeft = timerLength - Math.floor((currentTime - startTime) / 1000);
+  if (timeLeft < 0) timeLeft = 0;
+  
+  let output = [
+    Math.floor(timeLeft / 3600 / 24), // days
+    Math.floor(timeLeft / 3600 % 24), // hours
+    Math.floor(timeLeft % 3600 / 60), // minutes
+    Math.floor(timeLeft % 3600 % 60) // seconds
+  ]
+    .map(n => n.toString().padStart(2, "0")) // leading zeroes
+    .join(":");
+  
+  timerDiv.textContent = output;
+  
+  if (timeLeft === 0) {
+    clearInterval(timer);
+    console.log("you are dead :(");
+  }
+};
+
+timerFn(); // do this so the start time displays correctly
+let timer = setInterval(timerFn, 1000); // the 1000 value can be adjusted, if you need better precision use a lower value
+
+        // constant variable (data can't be changed)
+        
+    </script>
+</body>
+</html>
