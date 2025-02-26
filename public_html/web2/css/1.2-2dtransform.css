@@ -1,0 +1,15 @@
+#rotate {
+  transition: transform 1s;
+}
+
+#rotate:hover {
+  transform: rotate(360deg);
+}
+
+#grow:hover {
+  transform: scale(2);
+}
+
+.move-right {
+  transform: translateX(100%);
+}

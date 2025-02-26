@@ -1,0 +1,21 @@
+a:link {
+    transition: color 0.5s;
+  }
+  
+  .opacity img{
+    opacity: 0.25;
+    transition: opacity 500ms;
+  }
+  
+  .opacity img:hover {
+    opacity: 1;
+  }
+  
+
+  /* for animations page */
+  @media screen and (max-width: 900px) {
+    .twocolumn{
+      grid-template-columns: 1fr;
+    }
+    
+  }

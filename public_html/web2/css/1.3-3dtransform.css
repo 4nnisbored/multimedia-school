@@ -1,0 +1,17 @@
+#platform {
+    width: 200px;
+    height: 350px;
+    background-image: url("../img/placeholder200x200.png");
+    color: white;
+    transform: translate(100px) rotateX(55deg) rotateZ(45deg);
+    border-radius: 16px;
+    box-shadow: 1px 2px 10px #FF00FEf2,
+    44px 44px 24px #00000040;
+    transition: 0.5s ease-in-out box-shadow, 0.5s ease-in-out transform;
+}
+
+#platform:hover {
+    transform: translateX(100px) translateY(-24px) rotateX(55deg)rotateZ(45deg);
+    box-shadow: 1px 2px 10px #FF00FEf2,
+    70px 70px 24px #00000026;
+}

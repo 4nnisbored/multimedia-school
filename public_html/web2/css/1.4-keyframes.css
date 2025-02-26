@@ -1,0 +1,20 @@
+#keyframe {
+    animation-name: backAround;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes backAround {
+    0%{
+        transform: translateX(0px);
+    }
+
+    50%{
+        transform: translateX(200px);
+    }
+
+    100% {
+        rotate: 360deg;
+    }
+}

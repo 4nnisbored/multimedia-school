@@ -1,6 +1,6 @@
 html {
-    font-family: "Saira Condenced", sans-serif;
-    font-weight: 900;
+    font-family: "Saira Condenced", Ariel, sans-serif;
+    font-weight: 550;
     font-style: normal;
 }
 
@@ -58,11 +58,28 @@ html {
     font-style: normal;
   } */
   
+/* index */
+
+body {
+  padding-top: 65px;
+}
 
 nav {
     background-color: black;
     color: white;
     padding: 25px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+    margin: 0px;
+}
+
+nav img {
+  height:   3.583rem;
+  position: absolute;
+  right: 25px;
+  top: 5px;
 }
 
 #banner {
@@ -74,4 +91,40 @@ nav {
   background-size: auto;
   background-position: center;
   color: white;
+}
+
+@media screen and (min-width: 1920px) {
+  #banner {
+    background-size: 100%;
+  }
+  
+}
+/* index */
+
+/* 1.2 type scale minor third 
+  4.3rem
+  3.583rem
+  2.986rem
+  2.074rem
+  1.728rem
+  1.44rem
+  1.2rem
+  1rem
+  0.833rem
+  0.694rem
+  0.579rem
+  0.482rem
+*/
+
+article{
+  margin: 2.074rem;
+}
+
+.twocolumn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+::selection {
+  background: rgba(195, 151, 234, 0.75);
 }
