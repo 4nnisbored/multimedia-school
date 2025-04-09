@@ -1,23 +1,83 @@
 main {
     width: 100%;
-    background-color: black;
+    color: white;
+}
+body {
+    background-image: url(https://steamuserimages-a.akamaihd.net/ugc/942828818032559278/442E2D51A00255BF30E74C2A6CEAB6C0BB7A346A/?imw=1024&imh=575&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true);
+    background-size: 100%;
+    background-attachment: fixed;
     color: white;
 }
 .top {
 border-radius: 15px 15px 0px 0px;
 }
 
-.mgs1 {
-    background-image: url(../img/placeholder\ 640x640.jpeg);
+.bottom {
+    border-radius: 0px 0px 15px 15px;
 }
 
-.mgs2 {
-    background-color: brown;
+.basic {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 article{
-    margin: 2.074rem;
     max-width: 800px;
     margin: auto;
     background-color: rgba(0, 0, 0, 0.5);
+    border-width: 500px 0px;
+  }
+
+  article h2{
+    padding: 1.68rem;
+  }
+
+  article p{
+    padding: 0.84rem 1.68rem ;
+
+  }
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    padding: 0.482rem 1.68rem ;
+  }
+  hr {
+    border-color: #c3ffff81;
+    width: 100%;
+    border-width: 2px;
+    border-style: solid;
+  }
+
+  #title{
+    text-align: center;
+    padding: 4.3rem;
+  }
+
+  p a {
+    color: #c3ffff;
+  }
+
+
+  #scanline {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  #scanline img {
+    width: 100%;
+    height: auto;
+  }
+
+  @keyframes scanline {
+    0%{
+      transform: translateY(0px);
+  }
+
+  100%{
+    transform: translateY(100%);
+  }
   }

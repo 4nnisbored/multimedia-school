@@ -6,6 +6,7 @@
 
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* chrome keeps adding 8px margin on my body for no reason which */
