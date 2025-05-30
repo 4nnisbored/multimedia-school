@@ -65,6 +65,8 @@ body {
 }
 
 nav {
+    display: grid;
+    grid-template-columns: 1fr max-content max-content;
     background-color: black;
     color: white;
     padding: 25px;
@@ -76,10 +78,22 @@ nav {
 }
 
 nav img {
+  height: 3.583rem;
+  /* height: 100%; */
+  position: relative;
+  /* position: absolute; */
+  /* right: 25px;
+  top: 5px; */
+}
+
+nav embed {
   height:   3.583rem;
   position: absolute;
-  right: 25px;
-  top: 5px;
+  right: 75px;
+  top: 7px;
+}
+.st0{
+  fill: white;
 }
 
 #banner {
@@ -120,9 +134,15 @@ article{
   margin: 2.074rem;
 }
 
+article img {
+  width: 100%;
+  height: auto;
+}
+
 .twocolumn {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 25px;
 }
 
 ::selection {
