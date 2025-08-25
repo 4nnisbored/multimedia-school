@@ -61,7 +61,7 @@ html {
 /* index */
 
 body {
-  padding-top: 65px;
+  padding-top: 85px;
 }
 
 nav {
@@ -70,9 +70,13 @@ nav {
     background-color: black;
     color: white;
     padding: 25px;
-    width: 100%;
+    width: 100vw;
     position: fixed;
     top: 0px;
+    left: 0;
+    gap: 1.44rem;
+    align-content: center;
+    align-items: center;
     z-index: 1;
     margin: 0px;
 }
