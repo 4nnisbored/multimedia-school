@@ -65,6 +65,23 @@ figure{
     padding: 1.22rem;
 }
 
+.exer{
+    display: flex;
+    flex-direction: column;
+}
+
+.exerin{
+    width: 100%;
+    display: flex;
+}
+.exerin img{
+    width: 100%;
+}
+
+.exerin iframe{
+    width: 100%;
+}
+
 @keyframes star {
     0%{
         rotate: 0deg;
