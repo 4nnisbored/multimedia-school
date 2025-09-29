@@ -1,0 +1,27 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+#grille {
+    margin: auto;
+    width: 30vmin;
+    height: 30vmin;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-family: wingdings;
+}
+
+#grille .case {
+    border: solid black 1px;
+    display: grid;
+    place-items: center;
+}
+
+body {
+    text-align: center;
+    align-content: center;
+    max-width: 800px;
+    margin: auto;
+}
