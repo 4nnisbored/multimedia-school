@@ -1,3 +1,13 @@
+html {
+    font-family: Helvetica, sans-serif;
+}
+
+.MOBILEOHWHENIGETYOU {
+    /* okay but like why would it ignore overflow in html for NO REASON it's so stupid i'm going to kill john css */
+    overflow-x: hidden;
+    position: relative;
+}
+
 #star {
     color: yellow;
     position: absolute;
@@ -58,7 +68,10 @@ article{
 iframe{aspect-ratio: 16/9;}
 .inspo iframe{
     margin: auto;
+    width: 100%;
 }
+
+.inspo p { font-size: 1.2rem;}
 
 figure{
     flex-wrap: nowrap;
