@@ -9,7 +9,7 @@ document.querySelector("#gameBox").appendChild(canvas);
 // Image d'arrière-plan
 var bgReady = false;
 var bgImage = new Image();
-bgImage.src = "images/background.png";
+bgImage.src = "images/ass.png";
 bgImage.onload = function () {
     bgReady = true; 
 };
@@ -36,6 +36,20 @@ var goodyImage = new Image();
 goodyImage.src = "images/goody.png"; 
 goodyImage.onload = function () {
     goodyReady = true; 
+};
+
+    // fairy
+var fairyReady = false;
+var fairyImage = new Image();
+fairyImage.src = "images/fairy.png";
+fairyImage.onload = function () {
+    fairyReady = true;
+}
+
+    var fairy = {
+    x: 100,
+    y: 100,
+
 };
 
 // La boucle de jeu principale
@@ -66,11 +80,15 @@ var main = function () {
         }
         //vérifier les collisions
         for (var i in goodies) {
-            if (checkCollision(player,goodies[i])) {
+            if (checkCollision(player,fairy[i])) {
                 goodies.splice(i,1);
             }
         }
-
+// Check if enemy touches player
+if (checkCollision(player, fairy)) {
+    gameWin();
+    return;
+}
         render();
         window.requestAnimationFrame(main);
     }
@@ -117,8 +135,14 @@ var render = function () {
 var player = {
     speed : 5, // mouvement en pixels par tick 
     width: 32,
-    height: 32
+    height: 32,
 };
+
+var fairy = {
+    speed : 2,
+    width: 41,
+    height: 27,
+}
 
 var goodies = [ // ceci est un tableau (array)
     { width: 32, height: 32 }, // un goody
@@ -192,16 +216,28 @@ var init = function () {
     }
 };
 
-//Fonction générique pour vérifier les collisions 
-var checkCollision = function (obj1,obj2) {
-    if (obj1.x < (obj2.x + obj2.width) && 
-        (obj1.x + obj1.width) > obj2.x && 
-        obj1.y < (obj2.y + obj2.height) && 
-        (obj1.y + obj1.height) > obj2.y
-        ) {
-            return true;
-    }
-};
+        // Move enemy toward player
+var dx = player.x - fairy.x;
+var dy = player.y - fairy.y;
+var distance = Math.sqrt(dx * dx + dy * dy);
+
+if (distance > 0) {
+    fairy.x += (dx / distance) * fairy.speed;
+    fairy.y += (dy / distance) * fairy.speed;
+}
+
+// //Fonction générique pour vérifier les collisions 
+// var checkCollision = function (obj1,obj2) {
+//     if (obj1.x < (obj2.x + obj2.width) && 
+//         (obj1.x + obj1.width) > obj2.x && 
+//         obj1.y < (obj2.y + obj2.height) && 
+//         (obj1.y + obj1.height) > obj2.y
+//         ) {
+//             return true;
+//     }
+// };
+
+
 
 //Démarrer le jeu
 window.requestAnimationFrame(main);
