@@ -33,23 +33,9 @@ playerImage.onload = function () {
 // Image des goodies
 var goodyReady = false;
 var goodyImage = new Image(); 
-goodyImage.src = "images/goody.png"; 
+goodyImage.src = "images/fairy.png"; 
 goodyImage.onload = function () {
     goodyReady = true; 
-};
-
-    // fairy
-var fairyReady = false;
-var fairyImage = new Image();
-fairyImage.src = "images/fairy.png";
-fairyImage.onload = function () {
-    fairyReady = true;
-}
-
-    var fairy = {
-    x: 100,
-    y: 100,
-
 };
 
 // La boucle de jeu principale
@@ -80,15 +66,21 @@ var main = function () {
         }
         //vérifier les collisions
         for (var i in goodies) {
-            if (checkCollision(player,fairy[i])) {
+            if (checkCollision(player,goodies[i])) {
                 goodies.splice(i,1);
             }
         }
-// Check if enemy touches player
-if (checkCollision(player, fairy)) {
-    gameWin();
-    return;
+
+                // Move enemy toward player
+var dx = player.x - goodies.x;
+var dy = player.y - goodies.y;
+var distance = Math.sqrt(dx * dx + dy * dy);
+
+if (distance > 0) {
+    goodies.x += (dx / distance) * goodies.speed;
+    goodies.y += (dy / distance) * goodies.speed;
 }
+
         render();
         window.requestAnimationFrame(main);
     }
@@ -133,21 +125,21 @@ var render = function () {
 
 // Créer des objets de jeu globaux 
 var player = {
-    speed : 5, // mouvement en pixels par tick 
+    speed : 2, // mouvement en pixels par tick 
     width: 32,
     height: 32,
 };
 
-var fairy = {
-    speed : 2,
-    width: 41,
-    height: 27,
-}
+// var fairy = {
+//     speed : 2,
+//     width: 41,
+//     height: 27,
+// }
 
 var goodies = [ // ceci est un tableau (array)
-    { width: 32, height: 32 }, // un goody
-    { width: 32, height: 32 }, // deux goodies
-    { width: 32, height: 32 }  // trois goodies
+    { width: 41, height: 27, speed: 1}, // un goody
+    { width: 41, height: 27, speed: 1}, // deux goodies
+    { width: 41, height: 27, speed: 1}  // trois goodies
 ];
 
 // Variables de vitesse
@@ -216,26 +208,16 @@ var init = function () {
     }
 };
 
-        // Move enemy toward player
-var dx = player.x - fairy.x;
-var dy = player.y - fairy.y;
-var distance = Math.sqrt(dx * dx + dy * dy);
-
-if (distance > 0) {
-    fairy.x += (dx / distance) * fairy.speed;
-    fairy.y += (dy / distance) * fairy.speed;
-}
-
-// //Fonction générique pour vérifier les collisions 
-// var checkCollision = function (obj1,obj2) {
-//     if (obj1.x < (obj2.x + obj2.width) && 
-//         (obj1.x + obj1.width) > obj2.x && 
-//         obj1.y < (obj2.y + obj2.height) && 
-//         (obj1.y + obj1.height) > obj2.y
-//         ) {
-//             return true;
-//     }
-// };
+//Fonction générique pour vérifier les collisions 
+var checkCollision = function (obj1,obj2) {
+    if (obj1.x < (obj2.x + obj2.width) && 
+        (obj1.x + obj1.width) > obj2.x && 
+        obj1.y < (obj2.y + obj2.height) && 
+        (obj1.y + obj1.height) > obj2.y
+        ) {
+            return true;
+    }
+};
 
 
 
