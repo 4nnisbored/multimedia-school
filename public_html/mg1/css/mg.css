@@ -85,7 +85,8 @@ figure{
 
 .exerin{
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 .exerin img{
     width: 100%;
@@ -95,6 +96,13 @@ figure{
     width: 100%;
 }
 
+.projin{
+    width: 100%;
+}
+
+.projin iframe{
+    width: 100%;
+}
 @keyframes star {
     0%{
         rotate: 0deg;
@@ -110,5 +118,9 @@ figure{
     }
     .inspo {
         columns: 1;
+    }
+
+    .exerin{
+        grid-template-columns: 1fr;
     }
 }

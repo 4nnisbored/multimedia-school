@@ -25,7 +25,7 @@ winImage.onload = function () {
 // Image du joueur
 var playerReady = false;
 var playerImage = new Image(); 
-playerImage.src = "images/player.png"; 
+playerImage.src = "images/arsensheets/idle.png"; 
 playerImage.onload = function () {
     playerReady = true; 
 };
@@ -37,7 +37,12 @@ goodyImage.src = "images/fairy.png";
 goodyImage.onload = function () {
     goodyReady = true; 
 };
-
+var goodies = [ // ceci est un tableau (array)
+    { width: 41, height: 27, x: 100, y: 100, speed: 0.5}, // un goody
+    { width: 41, height: 27, x: 100, y: 100, speed: 0.5}, // deux goodies
+    { width: 41, height: 27, x: 100, y: 100, speed: 0.5},  // trois goodies
+    { width: 41, height: 27, x: 100, y: 100, speed: 0.5},  // trois goodies
+];
 // La boucle de jeu principale
 var main = function () {
     if (checkWin()) {
@@ -65,21 +70,31 @@ var main = function () {
             vY = -vY; //bounce
         }
         //vérifier les collisions
-        for (var i in goodies) {
+
+
+       for (var i in goodies) {
+            var dx = player.x - goodies[i].x;
+            var dy = player.y - goodies[i].y;
+            var distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance > 0) {
+                goodies[i].x -= (dx / distance) * goodies[i].speed;
+                goodies[i].y -= (dy / distance) * goodies[i].speed;
+            }
+
+            if (checkCollision(goodies[i],canvas)) {
+                console.log `ohshit`
+            }
+
             if (checkCollision(player,goodies[i])) {
                 goodies.splice(i,1);
-            }
+            } 
+
+
         }
 
                 // Move enemy toward player
-var dx = player.x - goodies.x;
-var dy = player.y - goodies.y;
-var distance = Math.sqrt(dx * dx + dy * dy);
 
-if (distance > 0) {
-    goodies.x += (dx / distance) * goodies.speed;
-    goodies.y += (dy / distance) * goodies.speed;
-}
 
         render();
         window.requestAnimationFrame(main);
@@ -118,6 +133,8 @@ var render = function () {
         vY = -vY; //rebond vertical
     }
 
+
+
     //Label
     ctx.fillStyle = "rgb(250, 250, 250)";
     ctx.fillText("Goodies restants : "+goodies.length, 32, 32);
@@ -126,8 +143,8 @@ var render = function () {
 // Créer des objets de jeu globaux 
 var player = {
     speed : 2, // mouvement en pixels par tick 
-    width: 32,
-    height: 32,
+    width: 120,
+    height: 144,
 };
 
 // var fairy = {
@@ -136,11 +153,9 @@ var player = {
 //     height: 27,
 // }
 
-var goodies = [ // ceci est un tableau (array)
-    { width: 41, height: 27, speed: 1}, // un goody
-    { width: 41, height: 27, speed: 1}, // deux goodies
-    { width: 41, height: 27, speed: 1}  // trois goodies
-];
+
+// var goodies = // ceci est un tableau (array)
+//     { width: 41, height: 27, speed: 1}, // un goody
 
 // Variables de vitesse
 var vX = 0;
