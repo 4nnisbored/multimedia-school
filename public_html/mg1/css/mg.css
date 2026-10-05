@@ -87,6 +87,7 @@ figure{
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin: 50px 0px;
 }
 .exerin img{
     width: 100%;
@@ -103,6 +104,14 @@ figure{
 .projin iframe{
     width: 100%;
 }
+
+#personal {
+    font-size: 8rem;
+    color: aqua;
+        animation-name: personal;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
 @keyframes star {
     0%{
         rotate: 0deg;
@@ -111,6 +120,18 @@ figure{
         rotate: 360deg;
     }
 }
+
+@keyframes personal {
+    0%{
+        color: aqua;
+    }
+    50%{
+        color: crimson;
+    }
+    100%{
+        color: aqua;
+    }
+} 
 
 @media screen and (max-width: 850px) {
     h1 {
